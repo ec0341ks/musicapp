@@ -1,3 +1,44 @@
 // Place all the styles related to the top controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// .top_page{
+//   width: 100vw;
+//   height: 100vh;
+//   position: relative;
+
+//   background-image: url('toppage.jpg');
+//   background-size: cover;
+//   opacity: 0.7;
+//   .container{
+  //   }
+  // }
+  
+.top_page{
+  width: 100vh;
+  height: 100vh;
+  min-width: 100%;
+  min-height: 100%;
+  position: relative;
+}
+
+.top_page::before {
+  background-image: url('toppage.jpg');
+  background-size: cover;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  opacity: 0.6;
+}
+.container{
+  padding-top: 200px;
+  h1{
+    font-size: 7rem;
+    font-weight: bold;
+  }
+}
