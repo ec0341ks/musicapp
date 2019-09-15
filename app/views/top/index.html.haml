@@ -1,0 +1,12 @@
+-# %link{href: "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css", rel: "stylesheet"}
+-# %script{src: "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"}
+-# %link{href: "https://fonts.googleapis.com/icon?family=Material+Icons", rel: "stylesheet"}/
+-# -# %script{src: "https://sdk.scdn.co/spotify-player.js"}
+.top_page
+  .container
+    %h1 Search for an Artist
+    %form#search-form
+      %input#query.form-control{placeholder: "Type an Artist Name", type: "text", value: ""}
+      %input#search.btn.btn-primary{type: "submit", value: "Search"}
+    #results
+      %h2
