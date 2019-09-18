@@ -1,0 +1,77 @@
+.list
+  .list__header
+    .input-field.col.2
+      %input#search.validate{placeholder: "Search lyrics & more", type: "text"}
+    %a LYRIC
+    .links
+      =link_to "sign up"
+      =link_to "sign in"
+  .list__navi-menu
+    .list__navi-menu__item
+      =link_to do
+        %a FEATURED 
+      =link_to do
+        %a CHARTS
+      =link_to do
+        %a VIDEOS
+
+  .contents
+    .contents__title
+      %h1 "iri"
+      %h2 ALL RESULT
+  .container
+    .container__left
+      .container__left__top 
+        .container__left__top__label.gray-label TOP RESULT
+        .container__left__top__content
+          = image_tag "iri.jpg", height: '48px', width: '48px', class: 'container__left__top__content__pict'
+          .container__left__top__content__name iri
+
+      .container__left__songs.gray-label
+        SONGS
+        
+        - (0..4).each do
+          .container__left__songs__card
+            = image_tag "shade.jpg", height: '75px', width: '75px', class: 'container__left__songs__card__pict'
+            .container__left__songs__card__info
+              .container__left__songs__card__info__title shade
+              .container__left__songs__card__info__name iri
+              .container__left__songs__card__info__count 300
+        .container__left__songs__more Show more songs
+
+    .container__right
+      .container__right__artists
+        .container__right__artists__label.gray-label ARTISTS
+        .container__right__artists__content
+          - (0..2).each do
+            .container__right__artists__content__card
+              = image_tag "iri.jpg", height: '48px', width: '48px', class: 'container__right__artists__content__card__pict'
+              .container__right__artists__content__card__name iri
+        .container__right__artists__more Show more artists
+
+
+
+
+      .container__right__albums
+        .container__right__albums__label.gray-label ALBUMS
+        .container__right__albums__content
+          - (0..2).each do
+            .container__right__albums__content__card
+              = image_tag "shade.jpg", height: '107px', width: '107px', class: 'container__right__albums__content__card__pict'
+              .container__right__albums__content__card__info
+                .container__right__albums__content__card__info__title shade
+                .container__right__albums__content__card__info__name iri
+                .container__right__albums__content__card__info__year 2019
+        .container__right__albums__more Show more albums
+
+
+
+
+
+
+
+
+
+
+
+
