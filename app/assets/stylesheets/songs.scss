@@ -123,9 +123,7 @@
 
     &__left{
       width: 58%;
-      padding: 0 1rem;
-      background-color: beige;
-      
+      padding: 0 1rem;      
       &__top{
         height: 100px;
 
@@ -146,6 +144,7 @@
         }
       }
       &__songs{
+        margin-top: 20px;
         &__card{
           height: 75px;
           background-color: white;
@@ -176,7 +175,6 @@
     &__right{
       width: 42%;
       padding: 0 1rem;
-      background-color: pink;
       &__artists{
         &__content{
           &__card{
@@ -194,6 +192,32 @@
             &__name{
               font-size: 23px;
             }
+          }
+        }
+        &__more{
+          color: #666;
+          padding: .5rem;
+          text-align: center;
+          font-size: .875em;
+          display: block;
+          background-color: #fff;
+        }
+      }
+      &__albums{
+        margin-top: 20px;
+
+
+        &__content{
+          height: 201px;
+          background-color: white;
+          display: flex;
+          align-items: flex-start;
+          padding: 4px;
+          margin-bottom: 4px;
+          &__card{
+            width: 30%;
+            margin-right: 5%;
+            
           }
         }
         &__more{
