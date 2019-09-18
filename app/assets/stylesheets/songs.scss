@@ -217,7 +217,9 @@
           &__card{
             width: 30%;
             margin-right: 5%;
-            
+            &__info{
+              text-align: center; 
+            }
           }
         }
         &__more{
