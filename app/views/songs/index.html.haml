@@ -23,7 +23,6 @@
     .container__left
       .container__left__top 
         .container__left__top__label.gray-label TOP RESULT
-        
         .container__left__top__content
           = image_tag "iri.jpg", height: '48px', width: '48px', class: 'container__left__top__content__pict'
           .container__left__top__content__name iri
@@ -39,7 +38,17 @@
               .container__left__songs__card__info__name iri
               .container__left__songs__card__info__count 300
         .container__left__songs__more Show more songs
-        
+
     .container__right
-      .container__right__artists.gray-label ARTISTS
+      .container__right__artists
+        .container__right__artists__label.gray-label ARTISTS
+        .container__right__artists__content
+          - (0..2).each do
+            .container__right__artists__content__card
+              = image_tag "iri.jpg", height: '48px', width: '48px', class: 'container__right__artists__content__card__pict'
+              .container__right__artists__content__card__name iri
+
+        .container__right__artists__more Show more artists
+
+
 
