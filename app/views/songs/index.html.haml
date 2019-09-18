@@ -23,45 +23,23 @@
     .container__left
       .container__left__top 
         .container__left__top__label.gray-label TOP RESULT
+        
         .container__left__top__content
-          .container__left__top__content__pict
-            .mini_card-thumbnail
-
-
-          
+          = image_tag "iri.jpg", height: '48px', width: '48px', class: 'container__left__top__content__pict'
           .container__left__top__content__name iri
 
-
-      .container__left__songs.gray-label SONGS
-
-
+      .container__left__songs.gray-label
+        SONGS
+        
+        - (0..4).each do
+          .container__left__songs__card
+            = image_tag "shade.jpg", height: '75px', width: '75px', class: 'container__left__songs__card__pict'
+            .container__left__songs__card__info
+              .container__left__songs__card__info__title shade
+              .container__left__songs__card__info__name iri
+              .container__left__songs__card__info__count 300
+        .container__left__songs__more Show more songs
+        
     .container__right
       .container__right__artists.gray-label ARTISTS
 
-    
-    -# %a.PageGriddesktop-a6v82w-0.ChartItemdesktop__Row-sc-3bmioe-0.izVEsw{:href => "https://genius.com/Ariana-grande-miley-cyrus-and-lana-del-rey-dont-call-me-angel-charlies-angels-lyrics"}
-    -#   .ChartItemdesktop__Rank-sc-3bmioe-1.jjZwKv 1
-    -#   .ChartSongdesktop__CoverAndTitle-sc-18658hh-0.gQrnZF
-    -#     .ChartSongdesktop__Cover-sc-18658hh-1.hxOuTW
-    -#       .SizedImage__Container-sc-1hyeaua-0.dbYDAf{"data-visible" => "true"}
-    -#         %noscript
-    -#           %img.SizedImage__NoScript-sc-1hyeaua-1.gIKSwQ{:src => "https://images.genius.com/c8d5a4d28b2eaf2b790d457d0b0a521b.300x300x1.jpg"}/
-    -#     %h3.ChartSongdesktop__TitleAndLyrics-sc-18658hh-2.iSkGPA
-    -#       .ChartSongdesktop__Title-sc-18658hh-3.WFLRu Don’t Call Me Angel (Charlie’s Angels)
-    -#       .ChartSongdesktop__Lyrics-sc-18658hh-4.jTzbQX
-    -#         %span.TextLabel-sc-8kw9oj-0.eRLSNe{:color => "background.onVariant"} Lyrics
-    -#   %h4.ChartSongdesktop__Artist-sc-18658hh-5.ffRKeh Ariana Grande, Miley Cyrus &amp; Lana Del Rey
-    -#   .ChartSongdesktop__Metadata-sc-18658hh-6.kQMLtf
-    -#     .ChartSongdesktop__Metadatum-sc-18658hh-7.fJPhyp
-    -#       .IconWithLabel__Container-sc-141ao6c-0.eAZNif
-    -#         .IconWithLabel__Icon-sc-141ao6c-1.guhGFO{:color => "accent.main"}
-    -#           %svg{:viewbox => "0 0 17 26"}
-    -#             %path{:d => "M4 3c2.95 1 6.84 8.93 6.84 8.93a8.361 8.361 0 0 0 1-5.43A15.928 15.928 0 0 1 17 18c-.12 7-8.85 8.05-8.85 8.05a4.63 4.63 0 0 0 1.76-2.87c.29-1.8-2.58-3.8-2.58-3.8-2.48 4.15-1.07 6.67-1.07 6.67S0 23.1 0 19.24c0-3.86 4.22-7.75 4.62-10.79A12.25 12.25 0 0 0 4 3zm2.58 5.51h-.02v.17A13.89 13.89 0 0 1 4.23 14C3.13 15.77 2 17.65 2 19.25c0 1 .88 2.07 2 3a12.38 12.38 0 0 1 1.62-3.9l1.1-1.84 1.84 1.2c.59.45 3.29 2.48 3.44 5a5.47 5.47 0 0 0 3-4.78 12.81 12.81 0 0 0-1.73-6.37c-.19.5-.426.98-.7 1.44l-1.89 3.1-1.62-3.29a39.714 39.714 0 0 0-2.48-4.3z", :fill => "#FF1464"}
-    -#         %span.TextLabel-sc-8kw9oj-0.bRDuzy{:color => "accent.main"} 102
-    -#     .ChartSongdesktop__Metadatum-sc-18658hh-7.fJPhyp
-    -#       .IconWithLabel__Container-sc-141ao6c-0.eAZNif
-    -#         .IconWithLabel__Icon-sc-141ao6c-1.cJkVIH{:color => "background.on"}
-    -#           %svg{:viewbox => "0 0 22 15.45"}
-    -#             %path{:d => "M11 2c4 0 7.26 3.85 8.6 5.72-1.34 1.87-4.6 5.73-8.6 5.73S3.74 9.61 2.4 7.73C3.74 5.86 7 2 11 2m0-2C4.45 0 0 7.73 0 7.73s4.45 7.73 11 7.73 11-7.73 11-7.73S17.55 0 11 0z"}
-    -#             %path{:d => "M11 5a2.73 2.73 0 1 1-2.73 2.73A2.73 2.73 0 0 1 11 5m0-2a4.73 4.73 0 1 0 4.73 4.73A4.73 4.73 0 0 0 11 3z"}
-    -#         %span.TextLabel-sc-8kw9oj-0.iRdQjQ{:color => "background.on"} 303.9K

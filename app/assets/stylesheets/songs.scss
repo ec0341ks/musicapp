@@ -131,7 +131,45 @@
 
         &__content{
           height: 75px;
+          line-height: 75px;
           background-color: white;
+          display: flex;
+          align-items: flex-start;
+          &__pict{
+            margin: 13px;
+            border-radius: 50%;
+            line-height: 75px;
+          }
+          &__name{
+            font-size: 23px;
+          }
+        }
+      }
+      &__songs{
+        &__card{
+          height: 75px;
+          background-color: white;
+          display: flex;
+          align-items: flex-start;
+          margin-bottom: 4px;
+          &__info{
+            color: black;
+            margin: 6px;
+            &__title{
+              font-size: 16px;
+            }
+            &__name{
+              font-size: 12px;
+            }
+          }
+        }
+        &__more{
+          color: #666;
+          padding: .5rem;
+          text-align: center;
+          font-size: .875em;
+          display: block;
+          background-color: #fff;
         }
       }
     }
@@ -143,3 +181,7 @@
   }
 }
 
+.gray-label{
+  color:#9a9a9a;;
+  font-size: .75rem;
+}
