@@ -71,10 +71,51 @@
       
     }
   }
-
   &__content{
-    z-index: 4px;
-    background-color: #000;
-    height: 280px;
+    margin: auto;
+    max-width: 970px;
+    position: relative;
+    width: 100%;
+    background-color: white;
+    display: flex;
+
+
+    &__main{
+      width: 58%;
+      height: 700px;
+      padding: 30px;
+    }
+    &__comment{
+      width: 42%;
+      &__bar{
+        background-color: #99a7ee;
+        bottom: 0;
+        position: absolute;
+        top: 1rem;
+        bottom: 5rem;
+        width: 4px;
+        &__white{
+          background: #fff;
+          width: 22px;
+          height: 38px;
+          position: absolute;
+          right: 0;
+          left: 0;
+          top: 202px;
+        }
+        &__squere{
+          height: 30px;
+          width: 22px;
+          right: 0;
+          position: absolute;
+          top: 200px;
+          fill: #99a7ee;
+        }
+        
+      }
+      &__zone{
+        padding-left: calc(1rem + 4px);
+      }
+    }
   }
 }
