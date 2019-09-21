@@ -1,5 +1,5 @@
 class SongsController < ApplicationController
-  require 'musix_match'
-  MusixMatch::API::Base.api_key = Rails.application.credentials.musixmatch_secret_key
-
+  def index
+    @response = MusixMatch.search_track(:q_artist => 'ariana')
+  end
 end
