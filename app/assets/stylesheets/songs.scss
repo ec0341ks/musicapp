@@ -1,16 +1,15 @@
 .list{
+  padding-bottom: 50px;
   &__header{
     display: flex;
     justify-content: space-between;    
-    -webkit-box-align: center;
     align-items: center;
     height: 41px;
     background: #5dc1cf;
     .input-field{
       display: flex;
       margin-left: 0.375rem;
-      -webkit-box-align: center;
-      align-items: center;
+      margin-top: 1px;
       width: 220px;
       height: calc(41px - 0.75rem);
       background: white;
@@ -84,7 +83,7 @@
     }
   }
   .contents{
-    padding: 4.5rem 60px;
+    padding: 2rem 60px;
     &__title{
       display: grid;
       -webkit-box-pack: center;
@@ -116,11 +115,10 @@
     }
   }
   .container{
-    padding: 0;
-    height: 970px;
+    padding: 0 ;
     display: flex;
     justify-content: space-around;
-
+    
     &__left{
       width: 58%;
       padding: 0 1rem;      
