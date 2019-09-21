@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
   root 'top#index'
-  resources :songs, only: :index
+  resources :songs, only: [:index,:show]
 end

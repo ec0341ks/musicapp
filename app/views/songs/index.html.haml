@@ -1,20 +1,6 @@
 .list
-  .list__header
-    .input-field.col.2
-      %input#search.validate{placeholder: "Search lyrics & more", type: "text"}
-    %a LYRIC
-    .links
-      =link_to "sign up"
-      =link_to "sign in"
-  .list__navi-menu
-    .list__navi-menu__item
-      =link_to do
-        %a FEATURED 
-      =link_to do
-        %a CHARTS
-      =link_to do
-        %a VIDEOS
-
+  = render 'songs/header'
+  
   .contents
     .contents__title
       %h1 "iri"

@@ -39,8 +39,7 @@ p,
 blockquote,
 th,
 td {
-    font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
-    margin:0;
+    font-family: Programme,sans-serif;    margin:0;
     padding:0;
 }
 table {
@@ -104,8 +103,7 @@ sub {
 input,
 textarea,
 select {
-    font-family:inherit;
-    font-size:inherit;
+    font-family: Programme,sans-serif;    font-size:inherit;
     font-weight:inherit;
     *font-size:100%; /*to enable resizing for IE*/
 }
@@ -116,8 +114,7 @@ legend {
 
 a,
 a:after{
-    font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
-    text-decoration: none;
+    font-family: Programme,sans-serif;    text-decoration: none;
     color: black;
 }
 
@@ -126,5 +123,5 @@ button{
 }
 
 *{
-    
+    box-sizing: border-box;
 }

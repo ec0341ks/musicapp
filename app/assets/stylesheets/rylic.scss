@@ -1,0 +1,121 @@
+.rylic{
+  &__top{
+    position: relative;
+    background-color: #000;
+    color: #fff;
+    height: 280px;
+    overflow: hidden;
+    height: 280px;
+    z-index: -2;
+    &__pic{
+      position:absolute;
+      opacity: 0.3;
+      transform: scale(1, -1);
+      z-index: -1;
+    }
+    &__info{
+      display: flex;
+      align-items: center;
+      margin: auto;
+      width: 970px;
+      height: 280px;
+      background: rgba(0,0,0,.6);
+      &__pic{
+        margin-left: -20px;
+      }
+      &__content{
+        margin-left: 1rem;
+        &__title{
+          font-size: 2.25em;
+          line-height: 1.125;
+          font-weight: 700;
+          color: yellow;
+          margin-top: -.2em;
+        }
+        &__name{
+          font-size: 1.5em;
+          line-height: 1.45;
+          font-weight: 700;
+          margin-bottom: .25rem;
+        }
+        &__produce{
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          line-height: 1.45;
+          font-size: 1em;
+          color: #9a9a9a;
+          display: flex;
+          align-items: flex-start;
+          font-weight: 400;
+          &__name{
+            padding-left: 5px;
+            color: #7d8fe8;
+          }
+        }
+        &__album{
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          line-height: 1.45;
+          font-size: 1em;
+          color: #9a9a9a;
+          display: flex;
+          align-items: flex-start;
+          font-weight: 400;
+          &__name{
+            padding-left: 5px;
+            color: #7d8fe8;
+          }
+        }
+
+      }
+      
+    }
+  }
+  &__content{
+    margin: auto;
+    max-width: 970px;
+    position: relative;
+    width: 100%;
+    background-color: white;
+    display: flex;
+
+
+    &__main{
+      width: 58%;
+      height: 700px;
+      padding: 30px;
+    }
+    &__comment{
+      width: 42%;
+      &__bar{
+        background-color: #99a7ee;
+        bottom: 0;
+        position: absolute;
+        top: 1rem;
+        bottom: 5rem;
+        width: 4px;
+        &__white{
+          background: #fff;
+          width: 22px;
+          height: 38px;
+          position: absolute;
+          right: 0;
+          left: 0;
+          top: 202px;
+        }
+        &__squere{
+          height: 30px;
+          width: 22px;
+          right: 0;
+          position: absolute;
+          top: 200px;
+          fill: #99a7ee;
+        }
+        
+      }
+      &__zone{
+        padding-left: calc(1rem + 4px);
+      }
+    }
+  }
+}
