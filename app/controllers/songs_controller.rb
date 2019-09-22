@@ -1,5 +1,6 @@
 class SongsController < ApplicationController
   def index
-    @response = MusixMatch.search_track(:q_artist => 'ariana')
+    artists = RSpotify::Artist.search('maroon')
+    binding.pry
   end
 end

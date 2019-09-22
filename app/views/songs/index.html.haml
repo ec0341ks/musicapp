@@ -11,12 +11,12 @@
         .container__left__top__label.gray-label TOP RESULT
         .container__left__top__content
           = image_tag "iri.jpg", height: '48px', width: '48px', class: 'container__left__top__content__pict'
-          .container__left__top__content__name iri
+          .container__left__top__content__name 
 
       .container__left__songs.gray-label
         SONGS
         
-        - (0..4).each do
+        - (0..3).each do |track|
           .container__left__songs__card
             = image_tag "shade.jpg", height: '75px', width: '75px', class: 'container__left__songs__card__pict'
             .container__left__songs__card__info
@@ -38,6 +38,7 @@
 
 
 
+
       .container__right__albums
         .container__right__albums__label.gray-label ALBUMS
         .container__right__albums__content
@@ -49,6 +50,7 @@
                 .container__right__albums__content__card__info__name iri
                 .container__right__albums__content__card__info__year 2019
         .container__right__albums__more Show more albums
+        
 
 
 
