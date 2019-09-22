@@ -143,8 +143,9 @@
       }
       &__songs{
         margin-top: 20px;
+        height: auto;
         &__card{
-          height: 75px;
+          height: auto;
           background-color: white;
           display: flex;
           align-items: flex-start;
