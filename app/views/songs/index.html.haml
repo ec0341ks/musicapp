@@ -10,8 +10,8 @@
       .container__left__top 
         .container__left__top__label.gray-label TOP RESULT
         .container__left__top__content
-          = image_tag "iri.jpg", height: '48px', width: '48px', class: 'container__left__top__content__pict'
-          .container__left__top__content__name
+          = image_tag(@topartists.first.images[0]["url"], size: "48x48", class: 'container__left__top__content__pict')
+          .container__left__top__content__name=@topartists.first.name
 
       .container__left__songs.gray-label
         SONGS
