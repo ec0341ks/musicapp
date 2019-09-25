@@ -1,71 +1,17 @@
-.list
-  = render 'songs/header'
-  
-  .contents
-    .contents__title
-      %h1 "iri"
-      %h2 ALL RESULT
+-# %link{href: "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css", rel: "stylesheet"}
+-# %script{src: "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"}
+-# %link{href: "https://fonts.googleapis.com/icon?family=Material+Icons", rel: "stylesheet"}/
+-# -# %script{src: "https://sdk.scdn.co/spotify-player.js"}
+.top_page
   .container
-    .container__left
-      .container__left__top 
-        .container__left__top__label.gray-label TOP RESULT
-        .container__left__top__content
-          = image_tag(@topartists.first.images[0]["url"], size: "48x48", class: 'container__left__top__content__pict')
-          .container__left__top__content__name=@topartists.first.name
+    %h1 Search for an Artist
+    -# %form#search-form
+    -#   %input#query.form-control{placeholder: "Type an Artist Name", type: "text", value: ""}
+    -#   %input#search.btn.btn-primary{type: "submit", value: "Search"}
+    -# #results
+    -#   %h2
 
-      .container__left__songs.gray-label
-        SONGS
-        
-        - @topartists.each do |artist|
-          .container__left__songs__card
-            - if artist.images.present?
-              = image_tag(artist.images[0]["url"], size: "75x75", class: 'container__left__songs__card__pict')
-            - else 
-              = image_tag "noimage.jpg", height: '75px', width: '75px', class: 'container__left__songs__card__pict'
-            .container__left__songs__card__info
-              .container__left__songs__card__info__title=artist.top_tracks(:US).first.name
-              .container__left__songs__card__info__name=artist.name
-              .container__left__songs__card__info__count 300
-        .container__left__songs__more Show more songs
-
-    .container__right
-      .container__right__artists
-        .container__right__artists__label.gray-label ARTISTS
-        .container__right__artists__content
-          - @topartists.each do |artist|
-            .container__right__artists__content__card
-              - if artist.images.present?
-                = image_tag(artist.images[0]["url"], size: "48x48", class: 'container__right__artists__content__card__pict')
-              - else 
-                = image_tag "noimage.jpg", height: '48px', width: '48px', class: 'container__right__artists__content__card__pict'
-              .container__right__artists__content__card__name=artist.name
-        .container__right__artists__more Show more artists
-
-
-
-
-
-      .container__right__albums
-        .container__right__albums__label.gray-label ALBUMS
-        .container__right__albums__content
-          - (0..2).each do
-            .container__right__albums__content__card
-              = image_tag "shade.jpg", height: '107px', width: '107px', class: 'container__right__albums__content__card__pict'
-              .container__right__albums__content__card__info
-                .container__right__albums__content__card__info__title shade
-                .container__right__albums__content__card__info__name iri
-                .container__right__albums__content__card__info__year 2019
-        .container__right__albums__more Show more albums
-        
-
-
-
-
-
-
-
-
-
-
-
-
+    -# = form_with model: '', url: songs_path, id: 'search-form', method: :get, local: true do |f|
+    = form_with(url: search_songs_path, method: :get) do |f|
+      = f.search_field :name_cont
+      %input#search.btn.btn-primary{type: "submit", value: "Search"}
