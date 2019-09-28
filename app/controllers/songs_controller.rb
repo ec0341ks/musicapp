@@ -12,6 +12,8 @@ class SongsController < ApplicationController
     # binding.pry
   end
   def show
+    @artist = RSpotify::Artist.search(params[:id].to_s).first
+    # binding.pry
   end
   private
   def input_params

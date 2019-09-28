@@ -5,16 +5,19 @@
     = image_tag "shade.jpg", height: '300px', width: '1440px', class: 'rylic__top__pic'
     
     .rylic__top__info
-      = image_tag "shade.jpg", height: '220px', width: '220px', class: 'rylic__top__info__pic'
+      = image_tag(@artist.images[0]["url"], size: "220x220", class: 'rylic__top__info__pic')
+
+      -# = image_tag "shade.jpg", height: '220px', width: '220px', class: 'rylic__top__info__pic'
       .rylic__top__info__content
         .rylic__top__info__content__title shade
-        .rylic__top__info__content__name iri
+        .rylic__top__info__content__name
+        -# - binding.pry
         .rylic__top__info__content__produce 
           .span.rylic__top__info__content__produce__by Produced by 
-          .span.rylic__top__info__content__produce__name iri
+          .span.rylic__top__info__content__produce__name=@artist.name
         .rylic__top__info__content__album
           .span.rylic__top__info__content__album__topic Album
-          .span.rylic__top__info__content__album__name shade
+          .span.rylic__top__info__content__album__name=@artist.top_tracks(:US).first.name
 
   .rylic__content
     .rylic__content__main

@@ -131,6 +131,7 @@
           background-color: white;
           display: flex;
           align-items: flex-start;
+          cursor: pointer;
           &__pict{
             margin: 13px;
             border-radius: 50%;
@@ -150,6 +151,8 @@
           display: flex;
           align-items: flex-start;
           margin-bottom: 4px;
+          cursor: pointer;
+
           &__info{
             color: black;
             margin: 6px;
@@ -177,6 +180,7 @@
       &__artists{
         &__content{
           &__card{
+            cursor: pointer;
             margin-bottom: 4px;
             height: 75px;
             line-height: 75px;
@@ -214,6 +218,7 @@
           padding: 4px;
           margin-bottom: 4px;
           &__card{
+            cursor: pointer;
             width: 30%;
             margin-right: 5%;
             &__info{
