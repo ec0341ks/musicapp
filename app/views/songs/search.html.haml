@@ -3,13 +3,16 @@
   
   .contents
     .contents__title
-      %h1 "iri"
+      %h1
+        "
+        %span>=@topartists.first.name
+        "    
       %h2 ALL RESULT
   .container
     .container__left
       .container__left__top 
         .container__left__top__label.gray-label TOP RESULT
-        .container__left__top__content
+        = link_to song_path(@topartists.first.name), class:"container__left__top__content" do
           - if @topartists.first.images[0].present?
             = image_tag(@topartists.first.images[0]["url"], size: "48x48", class: 'container__left__top__content__pict')
           - else 
