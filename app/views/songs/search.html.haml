@@ -23,7 +23,7 @@
         SONGS
         
         - @topartists.each do |artist|
-          .container__left__songs__card
+          = link_to song_path(artist.name), class:"container__left__songs__card" do
             - if artist.images.present?
               = image_tag(artist.images[0]["url"], size: "75x75", class: 'container__left__songs__card__pict')
             - else 
@@ -46,10 +46,6 @@
                 = image_tag "noimage.jpg", height: '48px', width: '48px', class: 'container__right__artists__content__card__pict'
               .container__right__artists__content__card__name=artist.name
         .container__right__artists__more Show more artists
-
-
-
-
 
       .container__right__albums
         .container__right__albums__label.gray-label ALBUMS
