@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root 'songs#index'
   # # resources :top, only: [:index]
   #   collection do
