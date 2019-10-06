@@ -10,7 +10,8 @@
         =link_to "SIGNUP",new_user_registration_path, method: :get
         =link_to "SIGNIN",new_user_session_path,method: :get
     .links__icon
-      = image_tag "iri.jpg", height: '41px', width: '41px', class: 'links__icon__image'
+      = link_to edit_user_path(current_user) do
+        = image_tag "iri.jpg", height: '41px', width: '41px', class: 'links__icon__image'
 
 .list__navi-menu
   .list__navi-menu__item
