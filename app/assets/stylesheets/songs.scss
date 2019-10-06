@@ -39,7 +39,10 @@
       font-family: Verdana 
     }
     .links{
+      padding-right: 10px;
+      height: 41px;
       color: white;
+      display: flex;
       a{
         transition: color .2s;
         color: white;
@@ -47,6 +50,11 @@
         cursor: pointer;
         font-size: .875em;
         min-width: .8em;
+      }
+      &__icon{
+        &__image{
+          cursor: pointer;
+        }
       }
     }
   }
