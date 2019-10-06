@@ -3,10 +3,15 @@
     %input#search.validate{placeholder: "Search lyrics & more", type: "text"}
   %a LYRIC
   .links
-    = link_to "log out", destroy_user_session_path, method: :delete, class: 'btn'
+    .links__btn
+      - if user_signed_in?
+        =link_to "LOGOUT", destroy_user_session_path, method: :delete
+      - else
+        =link_to "SIGNUP",new_user_registration_path, method: :get
+        =link_to "SIGNIN",new_user_session_path,method: :get
+    .links__icon
+      = image_tag "iri.jpg", height: '41px', width: '41px', class: 'links__icon__image'
 
-    =link_to "sign up",new_user_registration_path, method: :get, class: 'btn'
-    =link_to "sign in",new_user_session_path,method: :get, class: 'btn' 
 .list__navi-menu
   .list__navi-menu__item
     =link_to do
