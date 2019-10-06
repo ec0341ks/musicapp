@@ -43,6 +43,9 @@
       height: 41px;
       color: white;
       display: flex;
+      &__btn{
+        display: flex;
+      }
       a{
         transition: color .2s;
         color: white;
