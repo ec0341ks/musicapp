@@ -103,25 +103,9 @@
           Please your interpretation!　　
           = form.text_area :text, class: 'rylic__content__comment__main__input'
           = form.submit value: "submit", class: 'rylic__content__comment__main__submit'
+          
+          //comment部分
 
-          .rylic__content__comment__main__field
-            .rylic__content__comment__main__field__top
-              .rylic__content__comment__main__field__top__right
-                = image_tag "iri.jpg", height: '48px', width: '48px', class: 'rylic__content__comment__main__field__top__right__icon'
-                .rylic__content__comment__main__field__top__right__name yui
-              .rylic__content__comment__main__field__top__left　1 hours ago
-
-            .rylic__content__comment__main__field__bottom
-              .rylic__content__comment__main__field__bottom__zone 
-                この歌詞は、◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯
-
-
-
-
-
-
-
-        
-
-
-
+          .rylic__content__comment__main__comments
+            -# = render @comments
+            = render partial: "comment"
