@@ -3,8 +3,16 @@
     %input#search.validate{placeholder: "Search lyrics & more", type: "text"}
   %a LYRIC
   .links
-    =link_to "sign up"
-    =link_to "sign in"
+    .links__btn
+      - if user_signed_in?
+        =link_to "LOGOUT", destroy_user_session_path, method: :delete
+      - else
+        =link_to "SIGNUP",new_user_registration_path, method: :get
+        =link_to "SIGNIN",new_user_session_path,method: :get
+    .links__icon
+      = link_to edit_user_path(current_user) do
+        = image_tag "iri.jpg", height: '41px', width: '41px', class: 'links__icon__image'
+
 .list__navi-menu
   .list__navi-menu__item
     =link_to do
