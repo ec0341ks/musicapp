@@ -86,35 +86,26 @@
       答えのないトーキング
       All day, all day　All night, all night
 
+
+
+
     .rylic__content__comment
       .rylic__content__comment__bar
         .rylic__content__comment__bar__white
         .rylic__content__comment__bar__squere
           %svg{src: "left_arrow.svg", viewbox: "0 0 10.87 21.32", xmlns: "http://www.w3.org/2000/svg"}
             %path{d: "M9.37 21.32L0 10.66 9.37 0l1.5 1.32-8.21 9.34L10.87 20l-1.5 1.32"}
-      .rylic__content__comment__main
-        Please your interpretation!
-        %textarea.rylic__content__comment__main__input
-        %input.rylic__content__comment__main__submit{type: "submit", value: "submit"}
-        
-        .rylic__content__comment__main__field
-          .rylic__content__comment__main__field__top
-            .rylic__content__comment__main__field__top__right
-              = image_tag "iri.jpg", height: '48px', width: '48px', class: 'rylic__content__comment__main__field__top__right__icon'
-              .rylic__content__comment__main__field__top__right__name yui
-            .rylic__content__comment__main__field__top__left　1 hours ago
+      
+      
+      
+      = form_with(model: [ @songs, Comment.new ]) do |form|
+        .rylic__content__comment__main
+          Please your interpretation!　　
+          = form.text_area :text, class: 'rylic__content__comment__main__input'
+          = form.submit value: "submit", class: 'rylic__content__comment__main__submit'
+          
+          //comment部分
 
-          .rylic__content__comment__main__field__bottom
-            .rylic__content__comment__main__field__bottom__zone 
-              この歌詞は、◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯
-
-
-
-
-
-
-
-        
-
-
-
+          .rylic__content__comment__main__comments
+            -# = render @comments
+            = render partial: "comment"
