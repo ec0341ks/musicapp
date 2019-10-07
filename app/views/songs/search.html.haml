@@ -12,7 +12,7 @@
     .container__left
       .container__left__top 
         .container__left__top__label.gray-label TOP RESULT
-        = link_to song_path(@topartists.first.name), class:"container__left__top__content" do
+        = link_to comment_path(@topartists.first.name), class:"container__left__top__content" do
           - if @topartists.first.images[0].present?
             = image_tag(@topartists.first.images[0]["url"], size: "48x48", class: 'container__left__top__content__pict')
           - else 
@@ -23,7 +23,7 @@
         SONGS
         
         - @topartists.each do |artist|
-          = link_to song_path(artist.name), class:"container__left__songs__card" do
+          = link_to comment_path(artist.name), class:"container__left__songs__card" do
             - if artist.images.present?
               = image_tag(artist.images[0]["url"], size: "75x75", class: 'container__left__songs__card__pict')
             - else 

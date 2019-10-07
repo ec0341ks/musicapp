@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
-    
-  def index
+  def show
     @comment = Comment.new
+    @artist = RSpotify::Artist.search(params[:id].to_s).first
   end
 
   def create
