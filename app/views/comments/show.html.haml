@@ -98,7 +98,7 @@
       
       
       
-      = form_with(model: [ @songs, Comment.new ]) do |form|
+      = form_with(model: [ @comments, Comment.new ]) do |form|
         .rylic__content__comment__main
           Please your interpretation!　　
           = form.text_area :text, class: 'rylic__content__comment__main__input'
