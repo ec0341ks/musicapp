@@ -1,6 +1,6 @@
-.top_page
-  .container
-    %h1 Search for an Artist
-    = form_with(url: search_songs_path, method: :get, local: :true) do |f|
-      = f.search_field :name_cont
-      %input#search.btn.btn-primary{type: "submit", value: "Search"}
+= image_tag asset_path("toppage.jpg"), class: "top_page" 
+.container
+  %h1 Search for an Artist
+  = form_with(url: search_songs_path, method: :get, local: :true) do |f|
+    = f.search_field :name_cont
+    %input#search.btn.btn-primary{type: "submit", value: "Search"}
