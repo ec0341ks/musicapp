@@ -5,13 +5,13 @@
   .links
     .links__btn
       - if user_signed_in?
-        =link_to "LOGOUT", destroy_user_session_path, method: :delete
+        =link_to "LOGOUT", destroy_user_session_path, method: :delete, class:'btn red accent-1 cyan-text text-lighten-5'
         .links__icon
           = link_to edit_user_path(current_user) do
             = image_tag "iri.jpg", height: '41px', width: '41px', class: 'links__icon__image'
       - else
-        =link_to "SIGNUP",new_user_registration_path, method: :get
-        =link_to "SIGNIN",new_user_session_path,method: :get
+        =link_to "SIGNUP",new_user_registration_path, method: :get, class:'btn red accent-1 cyan-text text-lighten-5'
+        =link_to "SIGNIN",new_user_session_path,method: :get, class:'btn red accent-1 cyan-text text-lighten-5'
 
 .list__navi-menu
   .list__navi-menu__item

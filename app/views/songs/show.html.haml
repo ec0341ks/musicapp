@@ -6,12 +6,9 @@
     
     .rylic__top__info
       = image_tag(@artist.images[0]["url"], size: "220x220", class: 'rylic__top__info__pic')
-
-      -# = image_tag "shade.jpg", height: '220px', width: '220px', class: 'rylic__top__info__pic'
       .rylic__top__info__content
         .rylic__top__info__content__title shade
         .rylic__top__info__content__name
-        -# - binding.pry
         .rylic__top__info__content__produce 
           .span.rylic__top__info__content__produce__by Produced by 
           .span.rylic__top__info__content__produce__name=@artist.name
@@ -89,23 +86,4 @@
 
 
 
-    .rylic__content__comment
-      .rylic__content__comment__bar
-        .rylic__content__comment__bar__white
-        .rylic__content__comment__bar__squere
-          %svg{src: "left_arrow.svg", viewbox: "0 0 10.87 21.32", xmlns: "http://www.w3.org/2000/svg"}
-            %path{d: "M9.37 21.32L0 10.66 9.37 0l1.5 1.32-8.21 9.34L10.87 20l-1.5 1.32"}
-      
-      
-      
-      = form_with(model: [ @songs, Comment.new ]) do |form|
-        .rylic__content__comment__main
-          Please your interpretation!　　
-          = form.text_area :text, class: 'rylic__content__comment__main__input'
-          = form.submit value: "submit", class: 'rylic__content__comment__main__submit'
-          
-          //comment部分
-
-          .rylic__content__comment__main__comments
-            -# = render @comments
-            = render partial: "comment"
+    = render partial: '/comments/comments'

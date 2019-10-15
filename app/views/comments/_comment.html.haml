@@ -1,0 +1,8 @@
+-if comment != nil
+  .rylic__content__comment__main__comments__comment
+    .rylic__content__comment__main__comments__comment__right
+      = image_tag "iri.jpg", height: '48px', width: '48px', class: 'rylic__content__comment__main__comments__comment__right__icon'
+      .rylic__content__comment__main__comments__comment__right__name=comment.user.name
+    .rylic__content__comment__main__comments__comment__left=comment.created_at
+
+  .rylic__content__comment__main__comments__bottom=comment.content
