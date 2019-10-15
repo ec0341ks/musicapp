@@ -6,12 +6,9 @@
     
     .rylic__top__info
       = image_tag(@artist.images[0]["url"], size: "220x220", class: 'rylic__top__info__pic')
-
-      -# = image_tag "shade.jpg", height: '220px', width: '220px', class: 'rylic__top__info__pic'
       .rylic__top__info__content
         .rylic__top__info__content__title shade
         .rylic__top__info__content__name
-        -# - binding.pry
         .rylic__top__info__content__produce 
           .span.rylic__top__info__content__produce__by Produced by 
           .span.rylic__top__info__content__produce__name=@artist.name
