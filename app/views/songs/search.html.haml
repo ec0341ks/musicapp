@@ -29,7 +29,7 @@
             - else 
               = image_tag "noimage.jpg", height: '75px', width: '75px', class: 'container__left__songs__card__pict'
             .container__left__songs__card__info
-              .container__left__songs__card__info__title=artist.top_tracks(:US).first.name
+              .container__left__songs__card__info__title=artist.albums.first.name
               .container__left__songs__card__info__name=artist.name
               .container__left__songs__card__info__count 300
         .container__left__songs__more Show more songs

@@ -9,6 +9,7 @@ class SongsController < ApplicationController
   def show
     @artist = RSpotify::Artist.search(params[:id].to_s).first
     # binding.pry
+    # @artist.top_tracks(:US)[0].id  きょくのid
   end
   private
   def input_params

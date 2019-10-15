@@ -4,6 +4,7 @@ class CreateComments < ActiveRecord::Migration[5.2]
       t.string :content
       t.string :image
       t.references :user
+      t.string :music_id
       t.timestamps
     end
   end
