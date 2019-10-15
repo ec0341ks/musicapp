@@ -1,12 +1,12 @@
 class CommentsController < ApplicationController
     
-  def index
-    @comment = Comment.new
-  end
+  # def index
+  #   @comment = Comment.new
+  # end
 
   def create
     @comment = Comment.create(comment_params)
-    
+    binding.pry
   end
 
   private

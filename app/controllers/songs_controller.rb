@@ -8,6 +8,7 @@ class SongsController < ApplicationController
   end
   def show
     @artist = RSpotify::Artist.search(params[:id].to_s).first
+    @comments = Comment.all
     # binding.pry
     # @artist.top_tracks(:US)[0].id  きょくのid
   end
