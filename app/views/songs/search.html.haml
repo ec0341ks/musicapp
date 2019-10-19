@@ -23,14 +23,17 @@
         SONGS
         
         - @topartists.each do |artist|
-          = link_to song_path(artist.name), class:"container__left__songs__card" do
+          = link_to song_path(artist.top_tracks(:US)[0].id), class:"container__left__songs__card" do
             - if artist.images.present?
-              = image_tag(artist.images[0]["url"], size: "75x75", class: 'container__left__songs__card__pict')
+              = image_tag(artist.top_tracks(:US)[0].album.images[0]["url"], size: "75x75", class: 'container__left__songs__card__pict')
             - else 
               = image_tag "noimage.jpg", height: '75px', width: '75px', class: 'container__left__songs__card__pict'
             .container__left__songs__card__info
-              .container__left__songs__card__info__title=artist.albums.first.name
-              .container__left__songs__card__info__name=artist.name
+              .container__left__songs__card__info__title=artist.top_tracks(:US)[0].name
+              .container__left__songs__card__info__name
+              - artist.top_tracks(:US)[0].artists.each do |e|
+                =e.name
+
               .container__left__songs__card__info__count 300
         .container__left__songs__more Show more songs
 
