@@ -3,12 +3,13 @@ class SongsController < ApplicationController
   end
   def search
     artists = Song.artists_search(input_params)
-    @topartists = artists.take(3)
+    @topartists = artists.take(5)
+    @song = Song.music_search_by_id(params[:id])
   end
   def show
-    @artist = Song.artists_search(params[:id].to_s).first
+    @song = Song.music_search_by_id(params[:id])
     # 曲のidが一致したコメントを表示する
-    @comments = Comment.where(music_id: @artist.top_tracks(:US)[0].id)
+    @comments = Comment.where(music_id: @song.id)
   end
   private
   def input_params

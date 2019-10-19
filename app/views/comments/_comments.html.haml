@@ -8,7 +8,7 @@
   = form_with(model: Comment.new) do |form|
     .rylic__content__comment__main
       Please your interpretation!
-      = form.text_field :music_id, type: "hidden", value:@artist.top_tracks(:US)[0].id
+      = form.text_field :music_id, type: "hidden", value:@song.id
       = form.text_area :content, class: 'rylic__content__comment__main__input'
       = form.submit value: "submit", class: 'rylic__content__comment__main__submit'
       
