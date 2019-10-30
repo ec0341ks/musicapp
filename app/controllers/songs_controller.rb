@@ -2,9 +2,14 @@ class SongsController < ApplicationController
   def index
   end
   def search
-    artists = Song.artists_search(input_params)
-    @topartists = artists.take(5)
-    @song = Song.music_search_by_id(params[:id])
+    if input_params == ''
+      flash[:error] = "そのアーティストは検索できません"
+      redirect_to root_path
+    else 
+      @artists = Song.artists_search(input_params)
+      @topartists = @artists.take(5)
+      @song = Song.music_search_by_id(params[:id])
+    end
   end
   def show
     @song = Song.music_search_by_id(params[:id])
