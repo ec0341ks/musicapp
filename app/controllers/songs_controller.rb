@@ -3,7 +3,7 @@ class SongsController < ApplicationController
   end
   def search
     if input_params == ''
-      flash[:error] = "そのアーティストは検索できません"
+      flash[:error] = "アーティスト名を入力してください"
       redirect_to root_path
     else 
       @artists = Song.artists_search(input_params)
