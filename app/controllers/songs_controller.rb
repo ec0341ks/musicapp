@@ -7,8 +7,13 @@ class SongsController < ApplicationController
       redirect_to root_path
     else 
       @artists = Song.artists_search(input_params)
-      @topartists = @artists.take(5)
-      @song = Song.music_search_by_id(params[:id])
+      if @artists.first.present?
+        @topartists = @artists.take(5)
+        @song = Song.music_search_by_id(params[:id])
+      else
+        flash[:error] = '一致するアーティストはいません'
+        redirect_to root_path
+      end
     end
   end
   def show
