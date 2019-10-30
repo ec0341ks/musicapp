@@ -1,70 +1,65 @@
-- if @artists.first.present?
-  .list
-    = render 'songs/header'
-    
-    .contents
-      .contents__title
-        %h1
-          "
-          %span>=@topartists.first.name
-          "    
-        %h2 ALL RESULT
-    .container
-      .container__left
-        .container__left__top 
-          .container__left__top__label.gray-label TOP RESULT
-          = link_to song_path(@topartists.first.name), class:"container__left__top__content" do
-            - if @topartists.first.images[0].present?
-              = image_tag(@topartists.first.images[0]["url"], size: "48x48", class: 'container__left__top__content__pict')
+.list
+  = render 'songs/header'
+  
+  .contents
+    .contents__title
+      %h1
+        "
+        %span>=@topartists.first.name
+        "    
+      %h2 ALL RESULT
+  .container
+    .container__left
+      .container__left__top 
+        .container__left__top__label.gray-label TOP RESULT
+        = link_to song_path(@topartists.first.name), class:"container__left__top__content" do
+          - if @topartists.first.images[0].present?
+            = image_tag(@topartists.first.images[0]["url"], size: "48x48", class: 'container__left__top__content__pict')
+          - else 
+            = image_tag "noimage.jpg", height: '48px', width: '48px', class: 'container__left__top__content__pict'
+          .container__left__top__content__name=@topartists.first.name
+
+      .container__left__songs.gray-label
+        SONGS
+        - @topartists.each do |artist|
+          = link_to song_path(artist.albums.first.tracks.first.id), class:"container__left__songs__card" do
+            - if artist.albums.first.images.present?
+              = image_tag(artist.albums.first.images[0]["url"], size: "75x75", class: 'container__left__songs__card__pict')
             - else 
-              = image_tag "noimage.jpg", height: '48px', width: '48px', class: 'container__left__top__content__pict'
-            .container__left__top__content__name=@topartists.first.name
+              = image_tag "noimage.jpg", height: '75px', width: '75px', class: 'container__left__songs__card__pict'
+            .container__left__songs__card__info
+              .container__left__songs__card__info__title=artist.albums.first.tracks.first.name
+              .container__left__songs__card__info__name
+              - artist.albums.first.artists.each do |e|
+                =e.name
 
-        .container__left__songs.gray-label
-          SONGS
+              .container__left__songs__card__info__count 300
+        .container__left__songs__more Show more songs
+
+    .container__right
+      .container__right__artists
+        .container__right__artists__label.gray-label ARTISTS
+        .container__right__artists__content
           - @topartists.each do |artist|
-            = link_to song_path(artist.albums.first.tracks.first.id), class:"container__left__songs__card" do
-              - if artist.albums.first.images.present?
-                = image_tag(artist.albums.first.images[0]["url"], size: "75x75", class: 'container__left__songs__card__pict')
+            .container__right__artists__content__card
+              - if artist.images.present?
+                = image_tag(artist.images[0]["url"], size: "48x48", class: 'container__right__artists__content__card__pict')
               - else 
-                = image_tag "noimage.jpg", height: '75px', width: '75px', class: 'container__left__songs__card__pict'
-              .container__left__songs__card__info
-                .container__left__songs__card__info__title=artist.albums.first.tracks.first.name
-                .container__left__songs__card__info__name
-                - artist.albums.first.artists.each do |e|
-                  =e.name
+                = image_tag "noimage.jpg", height: '48px', width: '48px', class: 'container__right__artists__content__card__pict'
+              .container__right__artists__content__card__name=artist.name
+        .container__right__artists__more Show more artists
 
-                .container__left__songs__card__info__count 300
-          .container__left__songs__more Show more songs
-
-      .container__right
-        .container__right__artists
-          .container__right__artists__label.gray-label ARTISTS
-          .container__right__artists__content
-            - @topartists.each do |artist|
-              .container__right__artists__content__card
-                - if artist.images.present?
-                  = image_tag(artist.images[0]["url"], size: "48x48", class: 'container__right__artists__content__card__pict')
-                - else 
-                  = image_tag "noimage.jpg", height: '48px', width: '48px', class: 'container__right__artists__content__card__pict'
-                .container__right__artists__content__card__name=artist.name
-          .container__right__artists__more Show more artists
-
-        .container__right__albums
-          .container__right__albums__label.gray-label ALBUMS
-          .container__right__albums__content
-            - (0..2).each do
-              .container__right__albums__content__card
-                = image_tag "shade.jpg", height: '107px', width: '107px', class: 'container__right__albums__content__card__pict'
-                .container__right__albums__content__card__info
-                  .container__right__albums__content__card__info__title shade
-                  .container__right__albums__content__card__info__name iri
-                  .container__right__albums__content__card__info__year 2019
-          .container__right__albums__more Show more albums
--else
-  =render 'songs/nodata'
-
-
+      .container__right__albums
+        .container__right__albums__label.gray-label ALBUMS
+        .container__right__albums__content
+          - (0..2).each do
+            .container__right__albums__content__card
+              = image_tag "shade.jpg", height: '107px', width: '107px', class: 'container__right__albums__content__card__pict'
+              .container__right__albums__content__card__info
+                .container__right__albums__content__card__info__title shade
+                .container__right__albums__content__card__info__name iri
+                .container__right__albums__content__card__info__year 2019
+        .container__right__albums__more Show more albums
 
 
 
