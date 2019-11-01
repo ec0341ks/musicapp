@@ -7,5 +7,6 @@ class Song < ApplicationRecord
   # music_idできょ くをけんさく
   def self.music_search_by_id(id)
     music = RSpotify::Track.find(id)
+    return music
   end
 end

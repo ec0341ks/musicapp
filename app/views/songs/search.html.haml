@@ -21,19 +21,38 @@
 
       .container__left__songs.gray-label
         SONGS
-        - @topartists.each do |artist|
-          = link_to song_path(artist.albums.first.tracks.first.id), class:"container__left__songs__card" do
-            - if artist.albums.first.images.present?
-              = image_tag(artist.albums.first.images[0]["url"], size: "75x75", class: 'container__left__songs__card__pict')
-            - else 
-              = image_tag "noimage.jpg", height: '75px', width: '75px', class: 'container__left__songs__card__pict'
-            .container__left__songs__card__info
-              .container__left__songs__card__info__title=artist.albums.first.tracks.first.name
-              .container__left__songs__card__info__name
-              - artist.albums.first.artists.each do |e|
-                =e.name
+        - @topartists.each_with_index do |artist, i|
+          - if i == 0
+            -artist.top_tracks(:JP).take(7).each do |track|
+              = link_to song_path(track.id), class:"container__left__songs__card" do
+                - if track.album.images.present?
+                  = image_tag(track.album.images[0]["url"], size: "75x75", class: 'container__left__songs__card__pict')
+                - else 
+                  = image_tag "noimage.jpg", height: '75px', width: '75px', class: 'container__left__songs__card__pict'
+                .container__left__songs__card__info
+                  .container__left__songs__card__info__title
+                    =track.name
+                  .container__left__songs__card__info__name
+                    -# =track.artists.first.name
+                    - track.artists.each do |artist|
+                      = artist.name
+                      <br/>
+          - else
+            -artist.top_tracks(:JP).take(1).each do |track|
+              = link_to song_path(track.id), class:"container__left__songs__card" do
+                - if track.album.images.present?
+                  = image_tag(track.album.images[0]["url"], size: "75x75", class: 'container__left__songs__card__pict')
+                - else 
+                  = image_tag "noimage.jpg", height: '75px', width: '75px', class: 'container__left__songs__card__pict'
+                .container__left__songs__card__info
+                  .container__left__songs__card__info__title
+                    =track.name
+                  .container__left__songs__card__info__name
+                  - track.artists.each do |artist|
+                    =artist.name
+                    <br/>
 
-              .container__left__songs__card__info__count 300
+                .container__left__songs__card__info__count 300
         .container__left__songs__more Show more songs
 
     .container__right
