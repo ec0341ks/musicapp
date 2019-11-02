@@ -69,13 +69,13 @@
       .container__right__albums
         .container__right__albums__label.gray-label ALBUMS
         .container__right__albums__content
-          - (0..2).each do
+          - @topartists.take(3).each do |artist|
             .container__right__albums__content__card
-              = image_tag "shade.jpg", height: '107px', width: '107px', class: 'container__right__albums__content__card__pict'
+              = image_tag(artist.albums.first.images[0]['url'], height: '107px', width: '107px', class: 'container__right__albums__content__card__pict')
               .container__right__albums__content__card__info
-                .container__right__albums__content__card__info__title shade
-                .container__right__albums__content__card__info__name iri
-                .container__right__albums__content__card__info__year 2019
+                .container__right__albums__content__card__info__title=artist.albums.first.name
+                .container__right__albums__content__card__info__name=artist.name
+                .container__right__albums__content__card__info__year=artist.albums.first.release_date
         .container__right__albums__more Show more albums
 
 
