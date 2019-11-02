@@ -2,7 +2,7 @@
   = render 'songs/header'
 
   .rylic__top
-    = image_tag "shade.jpg", height: '300px', width: '1440px', class: 'rylic__top__pic'
+    = image_tag(@song.album.images[0]["url"], height: '300px', width: '1440px', class: 'rylic__top__pic')
     
     .rylic__top__info
       = image_tag(@song.album.images[0]["url"], size: "220x220", class: 'rylic__top__info__pic')
@@ -10,10 +10,10 @@
         .rylic__top__info__content__title=@song.name
         .rylic__top__info__content__name
         .rylic__top__info__content__produce 
-          .span.rylic__top__info__content__produce__by Produced by 
+          .span.rylic__top__info__content__produce__by Produced by
           .span.rylic__top__info__content__produce__name
-          -@song.artists.each do |e|
-            =e.name 
+            -@song.artists.each do |e|
+              =e.name 
 
         .rylic__top__info__content__album
           .span.rylic__top__info__content__album__topic Album
