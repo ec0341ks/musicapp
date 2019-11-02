@@ -56,7 +56,7 @@
     .container__right
       .container__right__artists
         .container__right__artists__label.gray-label ARTISTS
-        .container__right__artists__content
+        = link_to song_path(@topartists.first.name), class:"container__right__artists__content" do
           - @topartists.each do |artist|
             .container__right__artists__content__card
               - if artist.images.present?
